@@ -1,0 +1,4 @@
+config BR2_PACKAGE_LIBCEDARC
+    bool "libcedarc"
+    help
+        Allwinner Cedar Video Engine Library
