@@ -20,3 +20,9 @@ Based on lindenis-v536 SDK
 - make menuconfig
 - Select "libcedarc" package
 - make
+
+## Work with ffmpeg (tested with buildroot 2020.02.1)
+- make menuconfig
+- goto "> Target packages > Audio and video applications > ffmpeg"
+- set "(--enable-omx) Additional parameters for ./configure"
+- recompile ffmpeg
