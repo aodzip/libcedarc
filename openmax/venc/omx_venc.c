@@ -1336,6 +1336,10 @@ OMX_ERRORTYPE __AwOmxVencSetParameter(OMX_IN OMX_HANDLETYPE pHComp,
                      (int)impl->m_sInPortDefType.format.video.nStride,
                      (int)impl->m_sInPortDefType.format.video.nFrameWidth,
                      (int)impl->m_sInPortDefType.format.video.nFrameHeight);
+                impl->m_sInPortFormatType.eColorFormat = impl->m_sInPortDefType.format.video.eColorFormat;
+                impl->m_sInPortDefType.format.video.eColorFormat = impl->m_sInPortFormatType.eColorFormat;
+                    logd("set video port format 0x%x",
+                         impl->m_sInPortFormatType.eColorFormat);
             }
             else if (((OMX_PARAM_PORTDEFINITIONTYPE *)(pParamData))->nPortIndex ==
                      impl->m_sOutPortDefType.nPortIndex)
@@ -1390,7 +1394,8 @@ OMX_ERRORTYPE __AwOmxVencSetParameter(OMX_IN OMX_HANDLETYPE pHComp,
                     impl->m_sOutPortDefType.format.video.nFrameHeight * 3 / 2;
                 impl->m_sOutPortDefType.nBufferSize = \
                     omx_venc_align(impl->m_sOutPortDefType.nBufferSize, BUF_ALIGN_SIZE);
-              //Android set framerate (fps) as xFramerate >> 16 while linux as xFramerate itself.
+
+              //Android set framerate (fps) as xFramerate >> 16 while linux as xFramerate itself.
                 impl->m_framerate = (impl->m_sInPortDefType.format.video.xFramerate/*>>16 */);
                 if(!impl->m_framerate)
                 {
@@ -4475,3 +4480,4 @@ static void* ComponentVencThread(void* pThreadData)
 EXIT:
     return (void*)OMX_ErrorNone;
 }
+
