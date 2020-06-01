@@ -1,7 +1,7 @@
 
-Ò»¡¢linuxÏà¹ØËµÃ÷:
+ä¸€ã€linuxç›¸å…³è¯´æ˜:
 
-1. Ã¿Ì×linux so¶ÔÓ¦µÄ±àÒë¹¤¾ßÁ´ÈçÏÂ£º
+1. æ¯å¥—linux soå¯¹åº”çš„ç¼–è¯‘å·¥å…·é“¾å¦‚ä¸‹ï¼š
 
 # arm926-uclibc for BU1 C500
 # arm-openwrt-linux-muslgnueabi for BU2 Tina2.0
@@ -9,58 +9,58 @@
 # arm-openwrt-linux-uclibc for BU2 R16
 so_dir: arm926-uclibc                 host: arm-linux              toolchain_dir: uclibc_arm926_static
 so_dir: arm-linux-gnueabi             host: arm-linux-gnueabi      toolchain_dir: external-toolchain
-so_dir: arm-linux-gnueabihf           host: arm-linux-gnueabihf    toolchain_dir: ÏµÍ³×Ô´ø
-so_dir: arm-none-linux-gnueabi        host: arm-none-linux-gnueabi toolchain_dir: ÏµÍ³×Ô´ø
+so_dir: arm-linux-gnueabihf           host: arm-linux-gnueabihf    toolchain_dir: ç³»ç»Ÿè‡ªå¸¦
+so_dir: arm-none-linux-gnueabi        host: arm-none-linux-gnueabi toolchain_dir: ç³»ç»Ÿè‡ªå¸¦
 so_dir: arm-openwrt-linux-muslgnueabi host: arm-openwrt-linux      toolchain_dir: OpenWrt-Toolchain-sunxi_gcc-5.2.0_musl-1.1.12_eabi.Linux-x86_64
 so_dir: arm-openwrt-linux-uclibc      host: arm-openwrt-linux      toolchain_dir: toolchain_arm_uClibc
 so_dir: arm-linux-gnueabihf-linaro    host: arm-linux-gnueabihf    toolchain_dir: gcc-linaro-arm-linux-gnueabihf-4.8-2014.01_linux
 so_dir: arm-aarch64-openwrt-linux     host: aarch64-openwrt-linux  toolchain_dir: toolchain-sunxi-tina2.0-64
 so_dir: arm-openwrt-linux-muslgnueabi-v5  host: arm-openwrt-linux-muslgnueabi    toolchain_dir: linux-x86
 
-2.±àÒë²½ÖèÈçÏÂ£¨ÒÔarm926-uclibcÎªÀı£©£º
+2.ç¼–è¯‘æ­¥éª¤å¦‚ä¸‹ï¼ˆä»¥arm926-uclibcä¸ºä¾‹ï¼‰ï¼š
 
-2.1 export±àÒë¹¤¾ßÁ´£º
+2.1 exportç¼–è¯‘å·¥å…·é“¾ï¼š
                      TOOLS_CHAIN=/home/user/workspace/tools_chain/
                      export PATH=${TOOLS_CHAIN}/uclibc_arm926_static/bin:$PATH
 
-2.2. ÔËĞĞautomakeµÄÏà¹Ø¹¤¾ß£º./bootstrap
+2.2. è¿è¡Œautomakeçš„ç›¸å…³å·¥å…·ï¼š./bootstrap
 
-2.3. ÅäÖÃmakefile£º
-2.3.1 Ä£Ê½£º./configure --prefix=INSTALL_PATH --host=HOST_NAME LDFLAGS="-LSO_PATH"
-2.3.2 Ê¾Àı£º./configure --prefix=/home/user/workspace/libcedarc/install --host=arm-linux LDFLAGS="-L/home/user/workspace/libcedarc/lib/arm926-uclibc"
-2.3.3 ÌØ±ğËµÃ÷£ºÈç¹ûÄÚºËÓÃµÄÊÇlinux3.10, Ôò±ØĞë¼ÓÉÏflag£ºCFLAGS="-DCONF_KERNEL_VERSION_3_10" CPPFLAGS="-DCONF_KERNEL_VERSION_3_10"
-	  ¼´£º./configure --prefix=/home/user/workspace/libcedarc/install --host=arm-linux CFLAGS="-DCONF_KERNEL_VERSION_3_10" CPPFLAGS="-DCONF_KERNEL_VERSION_3_10" LDFLAGS="-L/home/user/workspace/libcedarc/lib/arm926-uclibc"
+2.3. é…ç½®makefileï¼š
+2.3.1 æ¨¡å¼ï¼š./configure --prefix=INSTALL_PATH --host=HOST_NAME LDFLAGS="-LSO_PATH"
+2.3.2 ç¤ºä¾‹ï¼š./configure --prefix=/home/user/workspace/libcedarc/install --host=arm-linux LDFLAGS="-L/home/user/workspace/libcedarc/lib/arm926-uclibc"
+2.3.3 ç‰¹åˆ«è¯´æ˜ï¼šå¦‚æœå†…æ ¸ç”¨çš„æ˜¯linux3.10, åˆ™å¿…é¡»åŠ ä¸Šflagï¼šCFLAGS="-DCONF_KERNEL_VERSION_3_10" CPPFLAGS="-DCONF_KERNEL_VERSION_3_10"
+	  å³ï¼š./configure --prefix=/home/user/workspace/libcedarc/install --host=arm-linux CFLAGS="-DCONF_KERNEL_VERSION_3_10" CPPFLAGS="-DCONF_KERNEL_VERSION_3_10" LDFLAGS="-L/home/user/workspace/libcedarc/lib/arm926-uclibc"
 
-2.4 ±àÒë£ºmake ; make install
+2.4 ç¼–è¯‘ï¼šmake ; make install
 
-¶ş¡¢°æ±¾¸Ä¶¯ËµÃ÷£º
+äºŒã€ç‰ˆæœ¬æ”¹åŠ¨è¯´æ˜ï¼š
 
 1). CedarC-v1.0.4
 
-1. ÌØ±ğËµÃ÷£º
+1. ç‰¹åˆ«è¯´æ˜ï¼š
 
-1.1 cameraÄ£¿éÏà¹Ø£º( >=android7.0µÄÆ½Ì¨ĞèÒª½øĞĞÈçÏÂĞŞ¸Ä,ÆäËûÆ½Ì¨±£³ÖÖ®Ç°µÄ×ö·¨)
-    ĞŞ¸ÄµÄÔ­Òò£ºa.omxºÍandroid framework¶¼Ã»ÓĞ¶ÔNV21ºÍNV12ÕâÁ½ÖÖÍ¼Ïñ¸ñÊ½½øĞĞÏ¸·Ö£¬¶¼ÊÇÓÃOMX_COLOR_FormatYUV420SemiPlanar
-	            ½øĞĞ±íÊ¾£¬OMX_COLOR_FormatYUV420SemiPlanar¼´¿ÉÒÔ±íÊ¾NV21£¬Ò²¿ÉÒÔ±íÊ¾NV12£»
-                b.¶øACodec½«OMX_COLOR_FormatYUV420SemiPlanarÓÃ×÷NV12£¬camera½«OMX_COLOR_FormatYUV420SemiPlanarÓÃÓÚNV21£¬
-                Ö®Ç°µÄ×ö·¨ÊÇomx_vencÍ¨¹ı½ø³ÌµÄ°üÃû½øĞĞÇø·Ö¼æÈİ£¬Èôµ÷ÓÃÕßÊÇACodec£¬ÔòÓÃ×÷NV12£¬Èôµ÷ÓÃÕßÊÇcamera£¬ÔòÓÃ×÷
-				NV21£»
-				c.android7.0ÒòÎªÈ¨ÏŞ¹ÜÀíµÄÔ­Òò£¬ÎŞ·¨»ñÈ¡µ½½ø³ÌµÄ°üÃû£¬ËùÒÔÎŞ·¨ÔÚomx_venc½øĞĞ¼æÈİ£¬Ö»ÄÜÔÚÉÏ²ãcaller²ã½øĞĞ
-				¼æÈİ£¬¶øcts»á¶ÔACodecµÄ½Ó¿Ú½øĞĞ²âÊÔ£¬Èô¸Ä¶¯ACodec£¬Ôò»áÏìÓ¦µ½cts²âÊÔ£¬ËùÒÔÖ»ÄÜĞŞ¸Äcamera
-				d.ĞŞ¸ÄµÄÔ­ÔòÎª£ºÀ©Õ¹Í¼Ïñ¸ñÊ½µÄÃ¶¾ÙÀàĞÍµÄ³ÉÔ±±äÁ¿OMX_COLOR_FormatYVU420SemiPlanar£¬ÓÃÓÚ±íÊ¾NV21£»
-				  ¼´ OMX_COLOR_FormatYUV420SemiPlanar --> NV12
+1.1 cameraæ¨¡å—ç›¸å…³ï¼š( >=android7.0çš„å¹³å°éœ€è¦è¿›è¡Œå¦‚ä¸‹ä¿®æ”¹,å…¶ä»–å¹³å°ä¿æŒä¹‹å‰çš„åšæ³•)
+    ä¿®æ”¹çš„åŸå› ï¼ša.omxå’Œandroid frameworkéƒ½æ²¡æœ‰å¯¹NV21å’ŒNV12è¿™ä¸¤ç§å›¾åƒæ ¼å¼è¿›è¡Œç»†åˆ†ï¼Œéƒ½æ˜¯ç”¨OMX_COLOR_FormatYUV420SemiPlanar
+	            è¿›è¡Œè¡¨ç¤ºï¼ŒOMX_COLOR_FormatYUV420SemiPlanarå³å¯ä»¥è¡¨ç¤ºNV21ï¼Œä¹Ÿå¯ä»¥è¡¨ç¤ºNV12ï¼›
+                b.è€ŒACodecå°†OMX_COLOR_FormatYUV420SemiPlanarç”¨ä½œNV12ï¼Œcameraå°†OMX_COLOR_FormatYUV420SemiPlanarç”¨äºNV21ï¼Œ
+                ä¹‹å‰çš„åšæ³•æ˜¯omx_vencé€šè¿‡è¿›ç¨‹çš„åŒ…åè¿›è¡ŒåŒºåˆ†å…¼å®¹ï¼Œè‹¥è°ƒç”¨è€…æ˜¯ACodecï¼Œåˆ™ç”¨ä½œNV12ï¼Œè‹¥è°ƒç”¨è€…æ˜¯cameraï¼Œåˆ™ç”¨ä½œ
+				NV21ï¼›
+				c.android7.0å› ä¸ºæƒé™ç®¡ç†çš„åŸå› ï¼Œæ— æ³•è·å–åˆ°è¿›ç¨‹çš„åŒ…åï¼Œæ‰€ä»¥æ— æ³•åœ¨omx_vencè¿›è¡Œå…¼å®¹ï¼Œåªèƒ½åœ¨ä¸Šå±‚callerå±‚è¿›è¡Œ
+				å…¼å®¹ï¼Œè€Œctsä¼šå¯¹ACodecçš„æ¥å£è¿›è¡Œæµ‹è¯•ï¼Œè‹¥æ”¹åŠ¨ACodecï¼Œåˆ™ä¼šå“åº”åˆ°ctsæµ‹è¯•ï¼Œæ‰€ä»¥åªèƒ½ä¿®æ”¹camera
+				d.ä¿®æ”¹çš„åŸåˆ™ä¸ºï¼šæ‰©å±•å›¾åƒæ ¼å¼çš„æšä¸¾ç±»å‹çš„æˆå‘˜å˜é‡OMX_COLOR_FormatYVU420SemiPlanarï¼Œç”¨äºè¡¨ç¤ºNV21ï¼›
+				  å³ OMX_COLOR_FormatYUV420SemiPlanar --> NV12
 				     OMX_COLOR_FormatYVU420SemiPlanar --> NV21
 
-	ĞŞ¸ÄµÄµØ·½£º
-	a. Í¬²½Í·ÎÄ¼ş£ºÍ¬²½openmax/omxcore/inc/OMX_IVCommon.h µ½./native/include/media/openmax/OMX_IVCommon.h
-	b. cameraÄ£¿éÔÚµ÷ÓÃopenmax/venc±àÂë½Ó¿ÚÊ±ĞèÒª½øĞĞĞŞ¸Ä£º
-	   ĞŞ¸ÄÇ° NV21 --> OMX_COLOR_FormatYUV420SemiPlanar£¬
-	   ĞŞ¸Äºó NV21 --> OMX_COLOR_FormatYVU420SemiPlanar;
+	ä¿®æ”¹çš„åœ°æ–¹ï¼š
+	a. åŒæ­¥å¤´æ–‡ä»¶ï¼šåŒæ­¥openmax/omxcore/inc/OMX_IVCommon.h åˆ°./native/include/media/openmax/OMX_IVCommon.h
+	b. cameraæ¨¡å—åœ¨è°ƒç”¨openmax/vencç¼–ç æ¥å£æ—¶éœ€è¦è¿›è¡Œä¿®æ”¹ï¼š
+	   ä¿®æ”¹å‰ NV21 --> OMX_COLOR_FormatYUV420SemiPlanarï¼Œ
+	   ä¿®æ”¹å NV21 --> OMX_COLOR_FormatYVU420SemiPlanar;
 
-1.2 ¼ÓÔØ½âÂë¿âµÄËµÃ÷£º
-    Ö®Ç°¼ÓÔØ½âÂë¿âµÄ²Ù×÷ÔÚvdecoder.cÕâÒ»²ã½øĞĞ£¬ÎªÁËÌá¸ßÁé»îĞÔ£¬´Óv1.0.4ºó
-°Ñ¼ÓÔØ½âÂë¿âµÄ²Ù×÷·Åµ½ÉÏ²ãµ÷ÓÃÕß½øĞĞ£¬ÉÏ²ã¿Éµ÷ÓÃvdecoder.cµÄAddVDPlugin½Ó¿ÚÄ¬ÈÏ
-¼ÓÔØËùÓĞµÄ×Ó½âÂë£¬»òÕß²ÎÕÕÈçÏÂ´úÂë°´Ğè¼ÓÔØ£º
+1.2 åŠ è½½è§£ç åº“çš„è¯´æ˜ï¼š
+    ä¹‹å‰åŠ è½½è§£ç åº“çš„æ“ä½œåœ¨vdecoder.cè¿™ä¸€å±‚è¿›è¡Œï¼Œä¸ºäº†æé«˜çµæ´»æ€§ï¼Œä»v1.0.4å
+æŠŠåŠ è½½è§£ç åº“çš„æ“ä½œæ”¾åˆ°ä¸Šå±‚è°ƒç”¨è€…è¿›è¡Œï¼Œä¸Šå±‚å¯è°ƒç”¨vdecoder.cçš„AddVDPluginæ¥å£é»˜è®¤
+åŠ è½½æ‰€æœ‰çš„å­è§£ç ï¼Œæˆ–è€…å‚ç…§å¦‚ä¸‹ä»£ç æŒ‰éœ€åŠ è½½ï¼š
 
 static void InitVDLib(const char *lib)
 {
@@ -110,11 +110,11 @@ static void AddVDLib(void)
     return;
 }
 
-2. ¸Ä¶¯µãÈçÏÂ£º
+2. æ”¹åŠ¨ç‚¹å¦‚ä¸‹ï¼š
 2.1 openmax:venc add p_skip interface
 2.2 h265:fix the HevcDecodeNalSps and HevcInitialFBM
 2.3 h264:refactor the H264ComputeOffset
-2.4 mjpeg scale+rotateµÄĞŞÕı
+2.4 mjpeg scale+rotateçš„ä¿®æ­£
 2.5 vdcoder/h265: add the code of parser HDR info
 2.6 vdecoder/h265: add the process of error-frame
 2.7 vdecoder/h264: make sure pMbNeighborInfoBuf is 16K-align to fix mbaff function
@@ -133,7 +133,7 @@ static void AddVDLib(void)
 
 2).CedarC-v1.0.5
 
-1. ¸Ä¶¯µãÈçÏÂ£º
+1. æ”¹åŠ¨ç‚¹å¦‚ä¸‹ï¼š
 1.1.configure.ac:fix the config for linux compiling
 1.2.openmax/venc: revert mIsFromCts on less than android_7.0 platfrom
 1.3.vdecoder/h265soft:make h265soft be compatible with AndroidN
@@ -146,53 +146,53 @@ static void AddVDLib(void)
 1.10.omx_venc: add yvu420sp for omx_venc init
 1.11.videoengine:add 2k limit for h2
 1.12.cedarc: add the toolschain of arm-openwrt-linux-muslgnueabi for v5
-1.13.cedarc: ½â¾ö0x1663 mpeg4 ²¥·Å»¨ÆÁµÄÎÊÌâ
+1.13.cedarc: è§£å†³0x1663 mpeg4 æ’­æ”¾èŠ±å±çš„é—®é¢˜
 1.14.vdecoder: fix compile error of soft decoder for A83t
 1.15.omx_vdec: fix the -1 bug for cts
-1.16.ĞŞ¸Ämpeg2 »ñÈ¡ve versionµÄ·½Ê½
+1.16.ä¿®æ”¹mpeg2 è·å–ve versionçš„æ–¹å¼
 1.17.vencoder: fix for input addrPhy check
 1.18.cedarc: merge the submit of cedarc-release
 
 3). CedarC-v1.1
 
-1. ÌØ±ğËµÃ÷£º
-1.1 v1.1¼¯³ÉÁËH6-dev¿ª·¢·ÖÖ§µÄĞŞ¸Ä³É¹û£»Ôö¼ÓÁËh265 10bitºÍafbc¹¦ÄÜ£¬´Ë¹¦ÄÜĞè
-    cedarxÆ¥ÅäĞŞ¸Ä£¬·ñÔòÎŞ·¨¶ÀÁ¢ÉúĞ§£»
-1.2 v1.1 ¹Ø±ÕÁËÓÃÓÚÉêÇëÎïÀíÁ¬ĞøÄÚ´æµÄmemory½Ó¿Ú£¬ÉÏ²ãÈôĞèÒªÉêÇëÎïÀíÄÚ´æ£¬ĞèÄ£¿é
-    ÄÚ²¿ÊµÏÖmemoryµÄ½Ó¿Ú»òµ÷ÓÃÆäËû½Ó¿Ú£»
-1.3 Ôö¼ÓÁËVideoDecoderGetVeIommuAddrºÍVideoDecoderFreeVeIommuAddrÕâÁ½¸ö½Ó¿Ú£¬ÓÃÓÚ
-    ¶ÔiommuµÄbuffer½øĞĞ°ó¶¨Óë½â°ó¶¨²Ù×÷¡£
+1. ç‰¹åˆ«è¯´æ˜ï¼š
+1.1 v1.1é›†æˆäº†H6-devå¼€å‘åˆ†æ”¯çš„ä¿®æ”¹æˆæœï¼›å¢åŠ äº†h265 10bitå’ŒafbcåŠŸèƒ½ï¼Œæ­¤åŠŸèƒ½éœ€
+    cedarxåŒ¹é…ä¿®æ”¹ï¼Œå¦åˆ™æ— æ³•ç‹¬ç«‹ç”Ÿæ•ˆï¼›
+1.2 v1.1 å…³é—­äº†ç”¨äºç”³è¯·ç‰©ç†è¿ç»­å†…å­˜çš„memoryæ¥å£ï¼Œä¸Šå±‚è‹¥éœ€è¦ç”³è¯·ç‰©ç†å†…å­˜ï¼Œéœ€æ¨¡å—
+    å†…éƒ¨å®ç°memoryçš„æ¥å£æˆ–è°ƒç”¨å…¶ä»–æ¥å£ï¼›
+1.3 å¢åŠ äº†VideoDecoderGetVeIommuAddrå’ŒVideoDecoderFreeVeIommuAddrè¿™ä¸¤ä¸ªæ¥å£ï¼Œç”¨äº
+    å¯¹iommuçš„bufferè¿›è¡Œç»‘å®šä¸è§£ç»‘å®šæ“ä½œã€‚
 
-2. ¸Ä¶¯µãÈçÏÂ£º
-2.1 Ôö¼Óh265 10bitºÍafbc¹¦ÄÜµÄÖ§³Ö£»
-2.2 Ôö¼Óvp9 Ó²¼ş½âÂëÇı¶¯£»
-2.3 Ôö¼Ó¶Ôiommu buffer¹ÜÀíµÄÖ§³Ö£»
-2.4 ¶ÔveÄ£¿é½øĞĞÁËÖØ¹¹£»
-2.5 ¶ÔsbmÄ£¿é½øĞĞÁËÖØ¹¹£»
-2.6 memory½Ó¿Ú²»ÔÙ¶ÔÍâ¿ª·Å¡£
+2. æ”¹åŠ¨ç‚¹å¦‚ä¸‹ï¼š
+2.1 å¢åŠ h265 10bitå’ŒafbcåŠŸèƒ½çš„æ”¯æŒï¼›
+2.2 å¢åŠ vp9 ç¡¬ä»¶è§£ç é©±åŠ¨ï¼›
+2.3 å¢åŠ å¯¹iommu bufferç®¡ç†çš„æ”¯æŒï¼›
+2.4 å¯¹veæ¨¡å—è¿›è¡Œäº†é‡æ„ï¼›
+2.5 å¯¹sbmæ¨¡å—è¿›è¡Œäº†é‡æ„ï¼›
+2.6 memoryæ¥å£ä¸å†å¯¹å¤–å¼€æ”¾ã€‚
 
 4). CedarC-v1.1.1
 
-1. ¸Ä¶¯µãÈçÏÂ£º
-1.1 µ÷Õûcedarc-release£¬Ä¿Ç°release³öÀ´µÄcedarc¿ÉÊÊÓÃÓÚËùÓĞandroidºÍlinxuÆ½Ì¨£»
+1. æ”¹åŠ¨ç‚¹å¦‚ä¸‹ï¼š
+1.1 è°ƒæ•´cedarc-releaseï¼Œç›®å‰releaseå‡ºæ¥çš„cedarcå¯é€‚ç”¨äºæ‰€æœ‰androidå’Œlinxuå¹³å°ï¼›
 1.2 vdecoder/Vp8:process the case of showFrm
 1.3 vdecoder/h265: increase the size of HEVC_LOCAL_SBM_BUF_SIZE
 1.4 vdecoder/videoengine: add the function of checkAlignStride
 1.5 vdecoder/h265: set proc info
-1.6 vdecoder/sbm: ĞŞ¸ÄH265 sbmFrame ·ÃÎÊÔ½½çµÄbug
+1.6 vdecoder/sbm: ä¿®æ”¹H265 sbmFrame è®¿é—®è¶Šç•Œçš„bug
 
 5). CedarC-v1.1.2
 
-1. ¸Ä¶¯µãÈçÏÂ£º
+1. æ”¹åŠ¨ç‚¹å¦‚ä¸‹ï¼š
 1.1 vdecoder/h264: set proc info
 1.2 vdecoder/mjpge: set proc info
 1.3 vdecoder: improve function of savePicture
 1.4 vencoder: fix for jpeg get phy_addr and androidN get chroma addr
-1.5 ÔÚfbmInfoÖĞÌí¼ÓoffsetµÄĞÅÏ¢
+1.5 åœ¨fbmInfoä¸­æ·»åŠ offsetçš„ä¿¡æ¯
 1.6 openmax/vdec: set mCropEnable to false on linux
-1.7 ²ÉÓÃÊôĞÔ¼ì²âµÄ·½Ê½À´È·¶¨ÄÚ´æµÄÊ¹ÓÃ·½Ê½
+1.7 é‡‡ç”¨å±æ€§æ£€æµ‹çš„æ–¹å¼æ¥ç¡®å®šå†…å­˜çš„ä½¿ç”¨æ–¹å¼
 1.8 unmap the fbm buffer when native window changed
-1.9 vp8 return the alterframe error for 'ĞÂÏÉº×ÉñÕë.mkv'
+1.9 vp8 return the alterframe error for 'æ–°ä»™é¹¤ç¥é’ˆ.mkv'
 
 6). CedarC-v1.1.3
 1.1 vdecoder: change the 6k range
@@ -210,19 +210,19 @@ static void AddVDLib(void)
 1.1 vencoder: add for thumb write back func
 1.2 vencoder:fix for set thumb write back scaler dynamic
 1.3 vencoder: fix for only thumb write back no encode
-1.4 ĞŞ¸Ä¼ì²âÓ²¼şbusyµÄ×´Ì¬Î»µÄµÈ´ıÊ±¼ä
+1.4 ä¿®æ”¹æ£€æµ‹ç¡¬ä»¶busyçš„çŠ¶æ€ä½çš„ç­‰å¾…æ—¶é—´
 1.5 vdecoder/sbmFrame: fix the error video 720P_V_.HEVC_AAC_2M_15F.mkv
 
 8). CedarC-v1.1.6
 
-1. ¸Ä¶¯µãÈçÏÂ£º
+1. æ”¹åŠ¨ç‚¹å¦‚ä¸‹ï¼š
 1.1 vdecoder/h264:after reset,the first frame pts is same to the last bitstream
 1.2 h265:fix the bug of parse-extradata
-1.3 ĞŞ¸ÄH264 Ìø²¥ºóptsÒì³£µÄbug
+1.3 ä¿®æ”¹H264 è·³æ’­åptså¼‚å¸¸çš„bug
 1.4 vdecoder: add lock for VideoEngineCreate
 1.5 fix gts test fail
 1.6 vdecoder/vc1: fix the bug: error when seek
-1.7 µ÷ÕûH264´úÂë¼Ü¹¹£¬Çå³ı×îºóÒ»Ö¡Ã»ÓĞ½âÂëµÄbug
+1.7 è°ƒæ•´H264ä»£ç æ¶æ„ï¼Œæ¸…é™¤æœ€åä¸€å¸§æ²¡æœ‰è§£ç çš„bug
 1.8 openmax/vdec: not support metadata buffer
 1.9 ve: fix for getIcVersion when other process is reseting ve
 1.10 openmax/vdec: open mem-ops when use
@@ -232,16 +232,16 @@ static void AddVDLib(void)
 1.14 h264:fix the progress of erro
 1.15 openmax/vdec: plus timeout to 5s
 
-2.ÌØ±ğËµÃ÷:
-2.1 mediacodecÍ¨Â·¶Ôafbc¹¦ÄÜµÄÖ§³Ö
-    afbc¹¦ÄÜµÄÖ§³ÖÉæ¼°µ½Á½¸öÄ£¿é£¬ÆäÒ»ÊÇcedarc/openmaxÄ£¿éµÄĞŞ¸Ä£¬´ËÄ£¿éµÄĞŞ¸ÄÒÑÍê³É£¬½«
- cedarcµÄ´úÂë¸üĞÂµ½cedarc-v1.1.6»ò¸üĞÂ°æ±¾¼´¿É£»
-    Æä¶şÊÇframework²ãµÄĞŞ¸Ä£¬Ä¿Ç°framework²ãµÄpatchÖ»¼¯³Éµ½H6µÄ·½°¸ÉÏ£¬ÈôÆäËû·½°¸Òª¼¯³Éafbc
- µÄ¹¦ÄÜ£¬¿ÉÕÒAL3µÄÍõÏ²ÍûÌá¹©framework_patch.
+2.ç‰¹åˆ«è¯´æ˜:
+2.1 mediacodecé€šè·¯å¯¹afbcåŠŸèƒ½çš„æ”¯æŒ
+    afbcåŠŸèƒ½çš„æ”¯æŒæ¶‰åŠåˆ°ä¸¤ä¸ªæ¨¡å—ï¼Œå…¶ä¸€æ˜¯cedarc/openmaxæ¨¡å—çš„ä¿®æ”¹ï¼Œæ­¤æ¨¡å—çš„ä¿®æ”¹å·²å®Œæˆï¼Œå°†
+ cedarcçš„ä»£ç æ›´æ–°åˆ°cedarc-v1.1.6æˆ–æ›´æ–°ç‰ˆæœ¬å³å¯ï¼›
+    å…¶äºŒæ˜¯frameworkå±‚çš„ä¿®æ”¹ï¼Œç›®å‰frameworkå±‚çš„patchåªé›†æˆåˆ°H6çš„æ–¹æ¡ˆä¸Šï¼Œè‹¥å…¶ä»–æ–¹æ¡ˆè¦é›†æˆafbc
+ çš„åŠŸèƒ½ï¼Œå¯æ‰¾AL3çš„ç‹å–œæœ›æä¾›framework_patch.
 
 9). CedarC-v1.1.7
 
-1. ¸Ä¶¯µãÈçÏÂ£º
+1. æ”¹åŠ¨ç‚¹å¦‚ä¸‹ï¼š
 1.1. vdecoder/avs:the case of diff pts > 2s for TvStream
 1.2. vencoder:jpeg fix for exif buffer memory leak
 1.3. h264:fix the bug of frameStream-end
@@ -249,60 +249,60 @@ static void AddVDLib(void)
 1.5. vdecoder/h264:u16 to s32
 1.6. vdecoder: add iptv-info for h264 and h265
 1.7. vdecoder/fbm: avoid memory leak
-1.8. ½â¾öH8 ´ó°×öè.mp4²¥·Å»¨ÆÁµÄÎÊÌâ
+1.8. è§£å†³H8 å¤§ç™½é²¨.mp4æ’­æ”¾èŠ±å±çš„é—®é¢˜
 1.9. vdecoder/sbmH264: surpport secure video
-1.10. °´ÕÕH264µÄ·Ö±æÂÊÀ´ÉêÇëDram buffer µÄ´óĞ¡
-1.11. ĞŞÕısurface ÇĞ»»Ê±£¬²¥·ÅA026.mpeg4¹Ò×¡µÄÎÊÌâ
-1.12. secure Ä£Ê½ÏÂÖ§³Öiommu
-1.13. H265 µÄve ÆµÂÊÔÚH6ÉÏµ÷ÕûÎª696MHZ
+1.10. æŒ‰ç…§H264çš„åˆ†è¾¨ç‡æ¥ç”³è¯·Dram buffer çš„å¤§å°
+1.11. ä¿®æ­£surface åˆ‡æ¢æ—¶ï¼Œæ’­æ”¾A026.mpeg4æŒ‚ä½çš„é—®é¢˜
+1.12. secure æ¨¡å¼ä¸‹æ”¯æŒiommu
+1.13. H265 çš„ve é¢‘ç‡åœ¨H6ä¸Šè°ƒæ•´ä¸º696MHZ
 1.14. memory: fix for get phy_addr 0 when is iommu mode
-1.15. H264 Ìí¼ÓÈí¼ş½âÍ·ĞÅÏ¢µÄ´úÂë
+1.15. H264 æ·»åŠ è½¯ä»¶è§£å¤´ä¿¡æ¯çš„ä»£ç 
 1.16. openmax/vdec: increase the input-buffer-size to 6 MB
 1.17. vdecoder: optimize the policy of set vefreq
-1.18. ÔÚmpeg2½âÂëÆ÷ÖĞÌí¼Ó´íÎóÖ¡µÄÊ¶±ğ
+1.18. åœ¨mpeg2è§£ç å™¨ä¸­æ·»åŠ é”™è¯¯å¸§çš„è¯†åˆ«
 1.19. omx:venc: fix for gpu buf
 1.20. vdecoder/avs/fix the flag of bIsProgressive
 1.21. openmax/vdec: support native-handle
-1.22. Ìí¼Óve ÆµÂÊÅäÖÃÏî
+1.22. æ·»åŠ ve é¢‘ç‡é…ç½®é¡¹
 1.23. vdecoder: not get the veLock with the softDecoder case
 
 10). CedarC-v1.1.7 -- patch-002
 
-1. ¸Ä¶¯µãÈçÏÂ£º
-1.1. ĞŞ¸ÄH264¼ÆËãdram bufferµÄ·½Ê½
-1.2. ĞŞ¸ÄT3 mpeg4v2µÄ½âÂë·½Ê½,´Ë¸ñÊ½VE²»Ö§³ÖÓ²½â
-1.3. ¼æÈİwidewine Ä£Ê½ÏÂextradata µÄ´¦Àí
+1. æ”¹åŠ¨ç‚¹å¦‚ä¸‹ï¼š
+1.1. ä¿®æ”¹H264è®¡ç®—dram bufferçš„æ–¹å¼
+1.2. ä¿®æ”¹T3 mpeg4v2çš„è§£ç æ–¹å¼,æ­¤æ ¼å¼VEä¸æ”¯æŒç¡¬è§£
+1.3. å…¼å®¹widewine æ¨¡å¼ä¸‹extradata çš„å¤„ç†
 1.4. vdecoder/H264/decoder one frame then return
-1.5. ¼æÈİparser´«´íwidthºÍheightµÄcase
+1.5. å…¼å®¹parserä¼ é”™widthå’Œheightçš„case
 1.6. openmax/vdec: add the policy of LIMIT_STREAM_NUM
 1.7. videoengine:fix the specificdat value
 1.8. videoengine: fix the ve unlock in VideoEngineReopen
 1.9. openmax/vdec: add the function of di
 1.10. vdecoder/H264:resolution change for online video
-1.11. ĞŞÕıÃ»ÓĞ»ñÈ¡µ½fbm ĞÅÏ¢Ê±,½âÂëÆ÷¾Í½ÓÊÕµ½eos±ê¼Ç¶ø²»ÄÜÕı³£ÍË³öµÄbug
+1.11. ä¿®æ­£æ²¡æœ‰è·å–åˆ°fbm ä¿¡æ¯æ—¶,è§£ç å™¨å°±æ¥æ”¶åˆ°eosæ ‡è®°è€Œä¸èƒ½æ­£å¸¸é€€å‡ºçš„bug
 1.12. openmax/vdec: remove bCalledByOmxFlag
 1.13. h265: fix the bug decoding the slcieRps as numOfRefs is outoff range
 1.14. openmax/vdec: not init decoder in the status of idle
 
 10). CedarC-v1.1.7 -- patch-003
 
-1. ¸Ä¶¯µãÈçÏÂ£º
-1.1 ĞŞ¸´h264 cts failed
+1. æ”¹åŠ¨ç‚¹å¦‚ä¸‹ï¼š
+1.1 ä¿®å¤h264 cts failed
 1.2 openmax/vdec: reset MAX_NUM_OUT_BUFFERS from 15 to 4 as it consume too much buffer
 1.3 h265: fix the pts of eos frame for gts
 1.4 fbm: fix the value of pMetaData
-1.5 ĞŞ¸Ämpeg2 pt2.vob ±ÀÀ£µÄbug
+1.5 ä¿®æ”¹mpeg2 pt2.vob å´©æºƒçš„bug
 
 10). CedarC-v1.1.7 -- patch-004
 
-1. ¸Ä¶¯µãÈçÏÂ£º
+1. æ”¹åŠ¨ç‚¹å¦‚ä¸‹ï¼š
 1.1 openmax/vdec: fix the process of decoding the last frame which size changes
 1.2 h265: fix the bug of decoding extraData
 1.3 fbm: add code for allocating metadata buffer for linux
 1.4 di not support 4K stream, for 4K interlace stream, ve does scaledown
 1.5 vdecoder: limit nVbvBufferSize to [1 MB, 32MB]
 1.6 openmax/vdec: increase OMX_VIDEO_DEC_INPUT_BUFFER_SIZE_SECURE from 256 KB to 1 MB
-1.7 ĞŞ¸ÄH264Òò¶ªÖ¡µ¼ÖÂµÄpts ¼ÆËã³ö´íµÄÎÊÌâ
+1.7 ä¿®æ”¹H264å› ä¸¢å¸§å¯¼è‡´çš„pts è®¡ç®—å‡ºé”™çš„é—®é¢˜
 1.8 vdecoder:add the decIpVersion for T7
 1.9 vdecoder/h264:add reset parameters of H264ResetDecoderParams()
 1.10 openMAX: Adapt DI process with two input di pictures to the platform of H3
@@ -314,25 +314,25 @@ static void AddVDLib(void)
 
 11). CedarC-v1.1.8
 
-1. ¸Ä¶¯µãÈçÏÂ£º
-1.1. ĞŞÕımp4normal ËõÂÔÍ¼Ä£Ê½ÏÂÃ»ÓĞspecialdataÊ±,ÎŞ·¨½âÂëµÄbug
-1.2. ĞŞÕımpeg4Normal ½ìËõÂÔÍ¼µÄbug
-1.3. Ö§³Ömjpeg444µÄ½âÂë
+1. æ”¹åŠ¨ç‚¹å¦‚ä¸‹ï¼š
+1.1. ä¿®æ­£mp4normal ç¼©ç•¥å›¾æ¨¡å¼ä¸‹æ²¡æœ‰specialdataæ—¶,æ— æ³•è§£ç çš„bug
+1.2. ä¿®æ­£mpeg4Normal å±Šç¼©ç•¥å›¾çš„bug
+1.3. æ”¯æŒmjpeg444çš„è§£ç 
 1.4. vdecoder: fix the bug when sbm inits failed
 1.5. vdecoder:fix for VC1. Be compatible to 64 bit system
-1.6. ĞŞ¸´0x1663²¥·Åmpeg4ÎÄ¼ş»¨ÆÁµÄÎÊÌâ
+1.6. ä¿®å¤0x1663æ’­æ”¾mpeg4æ–‡ä»¶èŠ±å±çš„é—®é¢˜
 1.7. cdcUtil: fix ion handle for linux4.4
-1.8. »Ö¸´vbv buffer size µÄÉèÖÃ·½Ê½
+1.8. æ¢å¤vbv buffer size çš„è®¾ç½®æ–¹å¼
 1.9. omx:venc: fix for h265 enc error
 1.10. vdecoder:A63 upgrade,Mpeg1/2/4 addr register
 1.11. vdecoder:catch DDR value for H265
-1.12. ĞŞÕı²¥·Å05_100M.ts ÊÓÆµpts ³ö´íµÄÎÊÌâ
+1.12. ä¿®æ­£æ’­æ”¾05_100M.ts è§†é¢‘pts å‡ºé”™çš„é—®é¢˜
 1.13. cedarc:avs:add support for sun8iw7p1
-1.14. 1708 Ğ¾Æ¬µÄmjpeg µ÷ÓÃmjpegPlus
+1.14. 1708 èŠ¯ç‰‡çš„mjpeg è°ƒç”¨mjpegPlus
 1.15. vdecoder/h265:protecting nFrameDuration
 1.16. vdecoder/sbm: fix bug: crash when length of stream is 0
-1.17. Ìí¼Óandoido µÄÖ§³Ö
-1.18. ĞŞ¸ÄH265µÄ¶ªÖ¡»úÖÆ
+1.17. æ·»åŠ andoido çš„æ”¯æŒ
+1.18. ä¿®æ”¹H265çš„ä¸¢å¸§æœºåˆ¶
 1.19. cedarc:avs_plus:fix avs_plus unsupport error on chip-1680
 1.20. cedarc/log: dynamic show log by property_get
 1.21. cedarc: compile so in system/lib/ and system/vendor/lib
@@ -340,11 +340,11 @@ static void AddVDLib(void)
 
 11). CedarC-v1.1.9
 
-1. ¸Ä¶¯µãÈçÏÂ£º
+1. æ”¹åŠ¨ç‚¹å¦‚ä¸‹ï¼š
 
-1.1 ĞŞ¸ÄlinuxÄ¿Â¼¿âÃû³Æ£º
+1.1 ä¿®æ”¹linuxç›®å½•åº“åç§°ï¼š
 
-    ĞŞ¸ÄÇ°                                 ĞŞ¸Äºó
+    ä¿®æ”¹å‰                                 ä¿®æ”¹å
 arm-linux-gnueabi                    arm-linux-gnueabi
 arm-linux-gnueabihf                  arm-linux-gnueabihf
 arm-none-linux-gnueabi               arm-none-linux-gnueabi
@@ -355,13 +355,13 @@ arm-openwrt-linux-muslgnueabi        toolchain-sunxi-arm9-musl
 arm-openwrt-linux-muslgnueabi-v5     toolchain-sunxi-arm-glibc
 arm-openwrt-linux-uclibc             toolchain-sunxi-arm-musl
 
-ËµÃ÷£ºĞŞ¸ÄÔ­ÒòÎª£º¸ù¾İBU1×îĞÂÌá¹©µÄ¹¤¾ßÁ´½øĞĞÕûÀí£»
-      Ç°Ãæ3Ì×ÎªÓÃµÃ±È½Ï¶àµÄ±àÒë¹¤¾ßÁ´£¬ÊÊÓÃÓÚ¸÷¸öBUµÄ·½°¸¿ª·¢£»
-      ºóÃæ6Ì×ÎªBU1Ìá¹©µÄ¹¤¾ßÁ´±àÒë³öÀ´µÄso£¬Èç¹ûÆäËûBUĞèÒªÊ¹ÓÃ£¬½¨ÒéÏÈÓëcedarcÇı¶¯×éµÄÍ¬ÊÂ£¨ÈçÍõÏ²Íû/ÁõĞ¡Ñà£©½øĞĞ¹µÍ¨ÁË½â£»
+è¯´æ˜ï¼šä¿®æ”¹åŸå› ä¸ºï¼šæ ¹æ®BU1æœ€æ–°æä¾›çš„å·¥å…·é“¾è¿›è¡Œæ•´ç†ï¼›
+      å‰é¢3å¥—ä¸ºç”¨å¾—æ¯”è¾ƒå¤šçš„ç¼–è¯‘å·¥å…·é“¾ï¼Œé€‚ç”¨äºå„ä¸ªBUçš„æ–¹æ¡ˆå¼€å‘ï¼›
+      åé¢6å¥—ä¸ºBU1æä¾›çš„å·¥å…·é“¾ç¼–è¯‘å‡ºæ¥çš„soï¼Œå¦‚æœå…¶ä»–BUéœ€è¦ä½¿ç”¨ï¼Œå»ºè®®å…ˆä¸cedarcé©±åŠ¨ç»„çš„åŒäº‹ï¼ˆå¦‚ç‹å–œæœ›/åˆ˜å°ç‡•ï¼‰è¿›è¡Œæ²Ÿé€šäº†è§£ï¼›
 
-1.2 ĞŞ¸Älinux soÃû³Æ£º
+1.2 ä¿®æ”¹linux soåç§°ï¼š
 
-	ĞŞ¸ÄÇ°                            ĞŞ¸Äºó
+	ä¿®æ”¹å‰                            ä¿®æ”¹å
 libcdc_vd_avs.so                   libawavs.so
 libcdc_vd_h264.so                  libawh264.so
 libcdc_vd_h265.so                  libawh265.so
@@ -380,4 +380,4 @@ libcdc_vencoder.so                 libvencoder.so
 libcdc_ve.so                       libVE.so
 libcdc_videoengine.so              libvideoengine.so
 
-ËµÃ÷£ºĞŞ¸Älinux soµÄÃû³ÆµÄÔ­ÒòÖ÷ÒªÊÇÎªÁËÓë androidÆ½Ì¨µÄsoÃû³ÆÒ»ÖÂ¡£
+è¯´æ˜ï¼šä¿®æ”¹linux soçš„åç§°çš„åŸå› ä¸»è¦æ˜¯ä¸ºäº†ä¸ androidå¹³å°çš„soåç§°ä¸€è‡´ã€‚
