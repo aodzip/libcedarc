@@ -1338,8 +1338,8 @@ OMX_ERRORTYPE __AwOmxVencSetParameter(OMX_IN OMX_HANDLETYPE pHComp,
                      (int)impl->m_sInPortDefType.format.video.nFrameHeight);
                 impl->m_sInPortFormatType.eColorFormat = impl->m_sInPortDefType.format.video.eColorFormat;
                 impl->m_sInPortDefType.format.video.eColorFormat = impl->m_sInPortFormatType.eColorFormat;
-                    logd("set video port format 0x%x",
-                         impl->m_sInPortFormatType.eColorFormat);
+                logd("set video port format 0x%x",
+                    impl->m_sInPortFormatType.eColorFormat);
             }
             else if (((OMX_PARAM_PORTDEFINITIONTYPE *)(pParamData))->nPortIndex ==
                      impl->m_sOutPortDefType.nPortIndex)
