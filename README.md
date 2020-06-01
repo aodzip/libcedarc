@@ -1,5 +1,6 @@
 # Allwinner CedarX userspace library
 Based on lindenis-v536 SDK
+
 ## Add package to buildroot system
 - Copy dir "buildroot-package/libcedarc" to "buildroot/package"
 
